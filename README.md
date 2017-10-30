@@ -3,6 +3,7 @@
 Численные методы. ДЗ № 1
 
 Все графики в https://github.com/brokkololo/NumMethods/tree/master/ChisMethods/ChisMethods/plots
+
 Коды в https://github.com/brokkololo/NumMethods/tree/master/ChisMethods/ChisMethods/
 
 
@@ -26,7 +27,7 @@
 => ошибка уменьшается при увеличении числа узлов
 
 
-#  Схема Кранка-Никольсон  (task4.cpp)
+#  Схема Кранка-Никольсон  (task3.cpp)
 
 
 	ошибка при h=pi/5, tau=0,25   : 1.17132		иллюстрация и результаты в krank-nikolson_asIs.xlsx
