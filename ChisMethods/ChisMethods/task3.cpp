@@ -50,10 +50,10 @@ int main() {
 		tempreture[j][iCnt - 1] = rightCond(h*(iCnt - 1), j*tau);
 	}
 
-	for (j = 1; j < jCnt; j++) { // ïî âðåìåíè
+	for (j = 1; j < jCnt; j++) { // Ã¯Ã® Ã¢Ã°Ã¥Ã¬Ã¥Ã­Ã¨
 		alifa[1] = 0;
 		beta[1] = tempreture[j][0];
-		for (i = 1; i < iCnt; i++){ // ïî Õ
+		for (i = 1; i < iCnt; i++){ // Ã¯Ã® Ã•
 			/*A[i] = -(1-p)*tau;
 			C[i] = h * h + 2*(1-p)*tau ;
 			B[i] = -(1 - p)*tau;
@@ -64,12 +64,12 @@ int main() {
 			C[i] = 1 + sigma;
 			B[i] = -0.5*sigma;
 			D[i] = tempreture[j - 1][i] * (1 - sigma) + 0.5*sigma* tempreture[j - 1][i - 1] + 0.5*sigma *tempreture[j - 1][i + 1]
-				+ F(i*h, (j - 0.5) * tau)*sigma;
+				+ F(i*h, (j - 0.5) * tau)*tau;
 			alifa[i + 1] = -B[i] / (A[i] * alifa[i] + C[i]);
 			beta[i + 1] = (D[i] - A[i] * beta[i]) / (A[i] * alifa[i] + C[i]);
 		}
 
-		for (i = iCnt - 2; i >= 1; i--) { // ïî Õ
+		for (i = iCnt - 2; i >= 1; i--) { // Ã¯Ã® Ã•
 			tempreture[j][i] = alifa[i + 1] * tempreture[j][i + 1] + beta[i + 1];
 
 		}
@@ -89,13 +89,13 @@ int main() {
 		cout << "   " << i*h;
 	}
 	cout << endl;
-	for (j = 0; j < jCnt; j++) { // ïî âðåìåíè
+	for (j = 0; j < jCnt; j++) { // Ã¯Ã® Ã¢Ã°Ã¥Ã¬Ã¥Ã­Ã¨
 		cout << j*tau << "  ";
-		for (i = 0; i < iCnt; i++) { // ïî X		
+		for (i = 0; i < iCnt; i++) { // Ã¯Ã® X		
 			cout << realValue(i*h, j*tau) << "  "; //tempreture[j][i] << "  ";
 			errV += abs(tempreture[j][i] - realValue(i*h, j*tau));
 		}
 		cout << endl;
 	}
-	//cout << "Îøèáêà: " << errV/(iCnt*jCnt);
+	//cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ : " << errV/(iCnt*jCnt);
 }
